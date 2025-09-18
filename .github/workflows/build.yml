@@ -1,0 +1,55 @@
+name: Build Project
+
+on:
+  push:
+    branches:
+      - 'master'
+  pull_request:
+    branches:
+      - 'master'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Build
+    env:
+      GITHUB_USERNAME: ${{ github.actor }}
+      GITHUB_TOKEN: ${{ secrets.OPTIMIZATION_TOKEN }}
+      JAVA_VERSION: 8
+
+      SIGN_KEYSTORE: ~/keystore.jks
+      SIGN_ALIAS: ${{secrets.CS_ALIAS}}
+      SIGN_STOREPASS: ${{secrets.CS_PASS}}
+      SIGN_KEYPASS: ${{secrets.CS_KEY_PASS}}
+      SIGN_TIMESTAMP: ${{secrets.CS_TIMESTAMP_URL}}
+
+      iiMavenReleasesUsername: ${{secrets.MVN_USER}}
+      iiMavenReleasesPassword: ${{secrets.MVN_PASS}}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: corretto
+          java-version: 8
+
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v3
+
+      - name: Decode Keystore
+        id: decode_keystore
+        uses: timheuer/base64-to-file@v1
+        with:
+          fileName: '~/keystore.jks'
+          encodedString: ${{ secrets.CS_KEYSTORE }}
+
+      - name: Execute Gradle publish
+        run: chmod +x gradlew ; ./gradlew publish --scan
+
+      - name: Notify Private Discord
+        uses: sebastianpopp/discord-action@releases/v2
+        with:
+            webhook: ${{ secrets.WH_DEPLOY }}
+            message: "We report that [${{ github.event.repository.custom_properties.project_pretty_name }}](<https://github.com/${{ github.repository }}>) has been successfuly deployed."
