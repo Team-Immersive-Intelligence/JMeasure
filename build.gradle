@@ -80,12 +80,12 @@ publishing {
             from(components.java)
 
             groupId group
-            artifactId "modworks-processor"
+            artifactId "jmeasure"
             version version
 
             pom {
-                name = 'Modworks Processor'
-                description = 'Code and Resources generation for Minecraft mods'
+                name = 'JMeasure'
+                description = 'Abstract measurements and statistics utility for JUnit 5.'
             }
         }
     }
