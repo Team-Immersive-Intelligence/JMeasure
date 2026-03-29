@@ -1,0 +1,83 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "net.iiteam",
+    "module": "jmeasure",
+    "version": "1.0.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "jmeasure-1.0.0.jar",
+          "url": "jmeasure-1.0.0.jar",
+          "size": 5985,
+          "sha512": "f2aac514d16606fafb8e31546f45651c7c7f9853ec5490d0927eaa096d70f411970b7c3f9a86503cc00e6e3bb676f36ad0bd16f209024b504b60f1040d851707",
+          "sha256": "353d5914e0535eca662bb48ee2dfdbd5fbc12af9924d9e661b591c383f9931a4",
+          "sha1": "ffd08f2df3389089b0a0c04dbd8bf97aebe80256",
+          "md5": "6be750060c8747a244ba64fc1d909a98"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.junit.jupiter",
+          "module": "junit-jupiter",
+          "version": {
+            "requires": "5.8.2"
+          }
+        },
+        {
+          "group": "com.google.code.gson",
+          "module": "gson",
+          "version": {
+            "requires": "2.10.1"
+          }
+        },
+        {
+          "group": "com.google.testing.compile",
+          "module": "compile-testing",
+          "version": {
+            "requires": "0.21.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "jmeasure-1.0.0.jar",
+          "url": "jmeasure-1.0.0.jar",
+          "size": 5985,
+          "sha512": "f2aac514d16606fafb8e31546f45651c7c7f9853ec5490d0927eaa096d70f411970b7c3f9a86503cc00e6e3bb676f36ad0bd16f209024b504b60f1040d851707",
+          "sha256": "353d5914e0535eca662bb48ee2dfdbd5fbc12af9924d9e661b591c383f9931a4",
+          "sha1": "ffd08f2df3389089b0a0c04dbd8bf97aebe80256",
+          "md5": "6be750060c8747a244ba64fc1d909a98"
+        }
+      ]
+    }
+  ]
+}

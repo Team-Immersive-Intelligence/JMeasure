@@ -41,10 +41,9 @@ tasks.register('signJar') {
                 destDir: "${signdir.absolutePath}",
                 jar: "${signdir.absolutePath}/*.jar",
                 alias: project.ksalias ?: System.getenv("SIGN_ALIAS"),
-                storetype: "jks",
+                storetype: "pkcs12",
                 keystore: project.keystore ?: System.getenv("SIGN_KEYSTORE"),
                 storepass: project.storepass ?: System.getenv("SIGN_STOREPASS"),
-                keypass: project.keypass ?: System.getenv("SIGN_KEYPASS"),
                 verbose: true,
                 preservelastmodified: "true",
                 tsaurl: project.timestamp_url ?: System.getenv("SIGN_TIMESTAMP")
@@ -76,7 +75,7 @@ publishing {
         }
     }
     publications {
-        ModworksProcessor(MavenPublication) {
+        JMeasure(MavenPublication) {
             from(components.java)
 
             groupId group

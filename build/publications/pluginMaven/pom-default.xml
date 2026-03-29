@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>net.iiteam</groupId>
+  <artifactId>JMeasure</artifactId>
+  <version>1.0.0</version>
+  <description>Abstract measurements and statistics utility for JUnit 5.</description>
+  <url>https://github.com/Team-Immersive-Intelligence/JMeasure</url>
+  <developers>
+    <developer>
+      <id>teamii</id>
+      <name>Team Immersive Intelligence</name>
+      <email>team@iiteam.net</email>
+    </developer>
+  </developers>
+  <scm>
+    <connection>scm:git:git://github.com/Team-Immersive-Intelligence/JMeasure.git</connection>
+    <developerConnection>scm:git:git://github.com/Team-Immersive-Intelligence/JMeasure.git</developerConnection>
+    <url>https://github.com/Team-Immersive-Intelligence/JMeasure</url>
+  </scm>
+  <issueManagement>
+    <system>github</system>
+    <url>https://github.com/Team-Immersive-Intelligence/JMeasure/issues</url>
+  </issueManagement>
+</project>
